@@ -1,3 +1,9 @@
+python-validity (0.15~ppa2+cancelfix1) noble; urgency=medium
+
+  * Don't interrupt the on-chip match when a verify is cancelled
+
+ -- nacos82 <333503338+nacos82@users.noreply.github.com>  Tue, 17 Nov 2026 09:43:09 +0200
+
 python-validity (0.15~ppa2) noble; urgency=medium
 
   * Change all write paths to /var/run/python-validity
