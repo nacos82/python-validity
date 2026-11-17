@@ -1,0 +1,14 @@
+[Unit]
+Description=Restart python-validity after resume
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+# Stop the driver first: it holds a dead USB handle after resume. With no driver registered,
+# open-fprintd queues requests instead of failing them, so the lock screen waits for the sensor.
+ExecStart=/bin/systemctl stop python3-validity.service
+ExecStart=/bin/sleep 2
+ExecStart=/bin/systemctl start python3-validity.service
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
