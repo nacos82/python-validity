@@ -7,6 +7,12 @@
 
 override_dh_installsystemd:
 	dh_installsystemd --name=python3-validity
+	# Oneshot run by the suspend targets; starting it at install would only restart the driver.
+	dh_installsystemd --name=validity-resume --no-start
+
+execute_after_dh_install:
+	install -D -m 644 debian/open-fprintd-no-debug.conf \
+		debian/python3-validity/usr/lib/systemd/system/open-fprintd.service.d/no-debug.conf
 
 override_dh_auto_install:
 	python3 ./setup.py install --root=$(CURDIR)/debian/tmp --prefix=/usr --install-layout=deb

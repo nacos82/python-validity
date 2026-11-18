@@ -1,3 +1,11 @@
+python-validity (0.15~ppa2+cancelfix2) noble; urgency=medium
+
+  * Run the driver without --debug
+  * Ship a unit that restarts the driver after resume
+  * Ship a drop-in that runs open-fprintd without --debug
+
+ -- nacos82 <333503338+nacos82@users.noreply.github.com>  Thu, 19 Nov 2026 00:59:35 +0200
+
 python-validity (0.15~ppa2+cancelfix1) noble; urgency=medium
 
   * Don't interrupt the on-chip match when a verify is cancelled
