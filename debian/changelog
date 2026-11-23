@@ -1,3 +1,10 @@
+python-validity (0.15~ppa2+cancelfix3) noble; urgency=medium
+
+  * Resume unit: only stop a driver that started before the system went to
+    sleep, so a driver that udev started after wake is kept
+
+ -- nacos82 <333503338+nacos82@users.noreply.github.com>  Mon, 23 Nov 2026 22:25:42 +0200
+
 python-validity (0.15~ppa2+cancelfix2) noble; urgency=medium
 
   * Run the driver without --debug
