@@ -1,3 +1,11 @@
+python-validity (0.15~ppa2+cancelfix4) noble; urgency=medium
+
+  * Keep pam_fprintd out of GDM's gdm-password conversation, so it doesn't
+    race gdm-fingerprint for the sensor and cut the lock screen to one try
+  * Add manual tests that mimic pam_fprintd's retries
+
+ -- nacos82 <333503338+nacos82@users.noreply.github.com>  Wed, 25 Nov 2026 12:02:06 +0200
+
 python-validity (0.15~ppa2+cancelfix3) noble; urgency=medium
 
   * Resume unit: only stop a driver that started before the system went to

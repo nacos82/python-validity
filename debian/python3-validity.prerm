@@ -8,4 +8,8 @@ set -e
 
 #DEBHELPER#
 
+if [ "$1" = remove ]; then
+    /usr/lib/python-validity/gdm-password-pam revert || true
+fi
+
 exit 0

@@ -5,6 +5,8 @@ set -e
 
 if [ "$1" = "configure" ]; then
     validity-sensors-firmware || true
+    # Keep pam_fprintd out of GDM's password conversation (see the script).
+    /usr/lib/python-validity/gdm-password-pam apply || true
     systemctl daemon-reload || true
     udevadm control --reload-rules || true
     udevadm trigger || true
